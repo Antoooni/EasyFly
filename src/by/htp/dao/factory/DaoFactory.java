@@ -1,13 +1,15 @@
 package by.htp.dao.factory;
 
 import by.htp.dao.DirectionCodeDao;
-import by.htp.dao.DirectionCodeDaoImpl;
 import by.htp.dao.FlightDirectionDao;
-import by.htp.dao.FlightDirectionDaoImpl;
 import by.htp.dao.FlightListDao;
-import by.htp.dao.FlightListDaoImpl;
 import by.htp.dao.UserAuthorizationDao;
-import by.htp.dao.UserAuthorizationDaoImpl;
+import by.htp.dao.UserCreateDao;
+import by.htp.dao.impldao.DirectionCodeDaoImpl;
+import by.htp.dao.impldao.FlightDirectionDaoImpl;
+import by.htp.dao.impldao.FlightListDaoImpl;
+import by.htp.dao.impldao.UserAuthorizationDaoImpl;
+import by.htp.dao.impldao.UserCreateDaoImpl;
 
 public class DaoFactory {
 
@@ -35,5 +37,8 @@ public class DaoFactory {
 	
 	public DirectionCodeDao getDirectionCodeDao(){
 		return new DirectionCodeDaoImpl();
+	}
+	public UserCreateDao getUserCreateDao(){
+		return new UserCreateDaoImpl();
 	}
 }

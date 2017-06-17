@@ -1,4 +1,4 @@
-package by.htp.dao;
+package by.htp.dao.impldao;
 
 import static by.htp.util.ConstantValue.*;
 

@@ -9,6 +9,7 @@ public class Flight implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -8813143772387838912L;
+	private int flightId;
 	private Direction fromDirection;
 	// private String arrivalCity;
 	private String departureDate;
@@ -26,7 +27,7 @@ public class Flight implements Serializable {
 	}
 
 	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
-			String arrivalDate, String arrivalTime) {
+			String arrivalDate, String arrivalTime, int flightId) {
 		super();
 		this.fromCode = fromCode;
 		this.fromDirection = fromDirection;
@@ -35,6 +36,15 @@ public class Flight implements Serializable {
 		this.toDirection = toDirection;
 		this.arrivalDate = arrivalDate;
 		this.arrivalTime = arrivalTime;
+		this.flightId=flightId;
+	}
+
+	public int getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
 	}
 
 	public Direction getFromDirection() {
@@ -112,6 +122,8 @@ public class Flight implements Serializable {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((departureDate == null) ? 0 : departureDate.hashCode());
 		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
+		result = prime * result + flightId;
+		result = prime * result + ((fromCode == null) ? 0 : fromCode.hashCode());
 		result = prime * result + ((fromDirection == null) ? 0 : fromDirection.hashCode());
 		result = prime * result + ((plane == null) ? 0 : plane.hashCode());
 		result = prime * result + ((toDirection == null) ? 0 : toDirection.hashCode());
@@ -149,6 +161,13 @@ public class Flight implements Serializable {
 				return false;
 		} else if (!departureTime.equals(other.departureTime))
 			return false;
+		if (flightId != other.flightId)
+			return false;
+		if (fromCode == null) {
+			if (other.fromCode != null)
+				return false;
+		} else if (!fromCode.equals(other.fromCode))
+			return false;
 		if (fromDirection == null) {
 			if (other.fromDirection != null)
 				return false;
@@ -169,10 +188,12 @@ public class Flight implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Flight [fromDirection=" + fromDirection + ", departureDate=" + departureDate + ", departureTime="
-				+ departureTime + ", toDirection=" + toDirection + ", arrivalDate=" + arrivalDate + ", arrivalTime="
-				+ arrivalTime + ", plane=" + plane + ", basicTariff=" + basicTariff + "]";
+		return "Flight [flightId=" + flightId + ", fromDirection=" + fromDirection + ", departureDate=" + departureDate
+				+ ", departureTime=" + departureTime + ", fromCode=" + fromCode + ", toDirection=" + toDirection
+				+ ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", plane=" + plane
+				+ ", basicTariff=" + basicTariff + "]";
 	}
+
 	
 
 }

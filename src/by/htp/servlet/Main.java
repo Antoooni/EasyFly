@@ -87,7 +87,7 @@ public class Main extends HttpServlet {
 		}
 	}
 
-	public String trimSlashPageName(String page) {
+	private String trimSlashPageName(String page) {
 		if (page.charAt(0) == '/') {
 			page = page.substring(1, page.length());
 			return page;

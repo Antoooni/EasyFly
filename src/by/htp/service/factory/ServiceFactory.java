@@ -1,13 +1,15 @@
 package by.htp.service.factory;
 
 import by.htp.service.AuthorizationService;
-import by.htp.service.AuthorizationServiceImpl;
 import by.htp.service.DirectionCodeService;
-import by.htp.service.DirectionCodeServiceImpl;
 import by.htp.service.DirectionService;
-import by.htp.service.DirectionServiceImpl;
 import by.htp.service.FlightListService;
-import by.htp.service.FlightListServiceImpl;
+import by.htp.service.UserCreateService;
+import by.htp.service.impl.AuthorizationServiceImpl;
+import by.htp.service.impl.DirectionCodeServiceImpl;
+import by.htp.service.impl.DirectionServiceImpl;
+import by.htp.service.impl.FlightListServiceImpl;
+import by.htp.service.impl.UserCreateServiceImpl;
 
 public class ServiceFactory {
 	
@@ -38,6 +40,9 @@ public class ServiceFactory {
 	
 	public DirectionCodeService getDirectionCodeService(){
 		return new DirectionCodeServiceImpl();
+	}
+	public UserCreateService getUserCreateService(){
+		return new UserCreateServiceImpl();
 	}
 
 
