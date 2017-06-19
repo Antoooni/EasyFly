@@ -1,18 +1,20 @@
 package by.htp.service.factory;
 
 import by.htp.service.AuthorizationService;
+import by.htp.service.AuthorizationServiceImpl;
 import by.htp.service.DirectionCodeService;
+import by.htp.service.DirectionCodeServiceImpl;
 import by.htp.service.DirectionService;
+import by.htp.service.DirectionServiceImpl;
 import by.htp.service.FlightListService;
+import by.htp.service.FlightListServiceImpl;
+import by.htp.service.SelectedFlightService;
+import by.htp.service.SelectedFlightServiceImpl;
 import by.htp.service.UserCreateService;
-import by.htp.service.impl.AuthorizationServiceImpl;
-import by.htp.service.impl.DirectionCodeServiceImpl;
-import by.htp.service.impl.DirectionServiceImpl;
-import by.htp.service.impl.FlightListServiceImpl;
-import by.htp.service.impl.UserCreateServiceImpl;
+import by.htp.service.UserCreateServiceImpl;
 
 public class ServiceFactory {
-	
+
 	private AuthorizationService authorizationService;
 	private DirectionService directionService;
 
@@ -27,28 +29,28 @@ public class ServiceFactory {
 	public static ServiceFactory getInstance() {
 		return ServiceFactoryHolder.instance;
 	}
-	
-	
-	
+
 	public DirectionService getDirectionService() {
 		return new DirectionServiceImpl();
 	}
-	
-	public AuthorizationService getAuthorizationService(){
+
+	public AuthorizationService getAuthorizationService() {
 		return new AuthorizationServiceImpl();
 	}
-	
-	public DirectionCodeService getDirectionCodeService(){
+
+	public DirectionCodeService getDirectionCodeService() {
 		return new DirectionCodeServiceImpl();
 	}
-	public UserCreateService getUserCreateService(){
+
+	public UserCreateService getUserCreateService() {
 		return new UserCreateServiceImpl();
 	}
 
-
-
-	public FlightListService getFlightListService(){
+	public FlightListService getFlightListService() {
 		return new FlightListServiceImpl();
 	}
 
+	public SelectedFlightService getSelectedFlightService() {
+		return new SelectedFlightServiceImpl();
+	}
 }

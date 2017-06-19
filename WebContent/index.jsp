@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index</title>
     <link rel="stylesheet" type="text/css" href="index.css"> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
 </head>
 <body>
 
@@ -30,10 +30,13 @@
         </nav>
 
         <button class="left" id="myBtn" >LOG IN</button>
-        <button class="right" id="myBtn1" >registration</button>
+        
+        <form name="registration" action="Main" method="GET" id="registration">
+                <input type="hidden" name="action" value="registration">
+                <button class="right" id="myBtn1" >registration</button>
+        </form>
 
         <div id="myPopUp" class="modal">
-
               <!--Modal content -->
               <div class="modal-content">
                 <span class="close">&times;</span>
@@ -56,7 +59,8 @@
                     </form>
                 </p>
               </div>
-        </div>  
+        </div> 
+
     </header>
 
     <div class="main-and-sidebar-wrapper"> 

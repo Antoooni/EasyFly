@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import by.htp.servlet.command.CommandAction;
 import by.htp.servlet.command.CreateNewUserAction;
+import by.htp.servlet.command.FlightInfoAction;
 import by.htp.servlet.command.GoHomeAction;
 import by.htp.servlet.command.LoginCommandAction;
 import by.htp.servlet.command.LogoutCommandAction;
@@ -21,6 +22,7 @@ public final class FillAndChooseAction {
 		actionsMap.put(ACTION_SEARCH, new SearchFlightAction());
 		actionsMap.put(ACTION_REGISTRATION, new RegistrationAction());
 		actionsMap.put(ACTION_CREATE_USER, new CreateNewUserAction());
+		actionsMap.put(ACTION_FLIGHT_INFO, new FlightInfoAction());
 		
 		return actionsMap;
 	}

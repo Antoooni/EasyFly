@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import by.htp.bin.FlightDirection;
 
 import by.htp.service.DirectionService;
+import by.htp.service.DirectionServiceImpl;
 import by.htp.service.factory.ServiceFactory;
-import by.htp.service.impl.DirectionServiceImpl;
 
 public class GoHomeAction implements CommandAction {
 	ServiceFactory serviceFactory = new ServiceFactory();

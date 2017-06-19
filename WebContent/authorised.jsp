@@ -16,10 +16,16 @@
     <header>
         <nav><!--
             <li><a href="#"><h1>Header</h1></a></li>-->
+            <form action = "Main" method="GET" id="home">
+              <input type="hidden" name="action" value="go_home">
+              <!--<input type="submit" value="Home"/>-->
+              <div class ="text_order_color" >
+                <a href="#"  onclick="document.getElementById('home').submit(); return false;">
+                  <h2>Home</h2>
+                </a>
+              </div>
+            </form>
             
-            <div class="circle">
-            <li><a href="#">Ru</a></li>
-            </div>
            <!-- <li><a href="#">Link</a></li>
             <form name="val_form" action="MainServlet" method="POST" onsubmit="return validate_form ( );">
                   <input type="hidden" value="login" name="action" />
@@ -28,6 +34,9 @@
             <input type="submit" onClick="return Formdata(this.form)" value="Log In" />--> 
             
         </nav>
+        <div class="greeting">
+                    Welcome <c:out value="${user_name}" />
+        </div>
 
         <form name="val_form" action="Main" method="GET" >
                   <input type="hidden" value="logout" name="action" />
@@ -68,9 +77,7 @@
 
         <section class="main">
             <!--<h2>FLEW ONCE IMPRESSIONS FOREVER </h2>-->  
-            <h3>
-                Welcome <c:out value="${user_name}" />
-            </h3>
+            
             <h2>Easy Fly </h2>
             <br>
             <br>

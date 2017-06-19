@@ -10,6 +10,10 @@ public class Plane implements Serializable {
 	private String planeName;
 	private int planeCapacity;
 
+	public Plane() {
+
+	}
+
 	public Plane(String planeName, int planeCapacity) {
 		super();
 		this.planeName = planeName;

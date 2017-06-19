@@ -14,6 +14,267 @@ body {
     color: #4e4544;
     font: normal 16px sans-serif;
 }
+#content { 
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    border-color: #e2e2e2;
+    border-radius: 5px;
+}
+.position { 
+    width: 850px;
+    height: 60px;
+    bottom: 0;
+}
+.position_first{
+    width: 800px;
+    height: 45px;
+    bottom: 0;
+}
+.position_head { 
+    width: 850px;
+    height: 60px;
+    bottom: 0;
+    background-color: #a6cff1;
+    vertical-align: 10px;
+}
+.position_right{
+    background-color: #20B2AA;
+    margin-left: 250px;
+    width: 600px;
+    height: 60px;
+}
+.position_third { 
+    width: 850px;
+    height: 45px;
+    bottom: 0;
+    background-color: #cadcea;
+}
+/*first*/
+#blok1_first{
+
+width:150px;
+height:45px;
+float:left;
+text-align: center;
+}
+#blok2_first{
+
+width:300px;
+height:45px;
+float:left;
+text-align: left;
+padding-left: 10px;
+padding-top: 5px;
+font-family: verdana;
+font-size: 12px;
+color: #c5c5c5;
+}
+/*second*/
+#blok1_third{
+text-transform: uppercase;
+width:180px;
+height:45px;
+float:left;
+padding-left: 5px;
+padding-bottom: 15px;
+padding-top: 15px;
+padding-right: 5px;
+text-align: right;
+font-family: verdana;
+font-size: 16px;
+color: #656565;
+}
+#blok2_third{
+
+width:20px;
+height:45px;
+float:left;
+padding-top:15px;
+font-family: verdana;
+font-size: 16px;
+color: #656565;
+}
+/*trird*/
+#blok3_third{
+text-transform: uppercase;
+width:220px;
+height:45px;
+float:left;
+text-align: left;
+padding-left: 5px;
+padding-bottom: 15px;
+padding-top: 15px;
+padding-right: 15px;
+font-family: verdana;
+font-size: 16px;
+color: #656565;
+}
+#blok1_fourth{
+
+width:300px;
+height:90px;
+float:left;
+}
+#sub_block1, #sub_block2{
+padding-top: 4px;
+width:250px;
+height:30%;
+text-align: left;
+font-family: verdana;
+padding-left: 14px;
+}
+#sub_block3{
+text-align: left;
+font-family: verdana;
+padding-top: 12px;
+padding-left: 14px;
+width:250px;
+height:40%;
+color: #4ba3f1;
+}
+#blok2_fourth{
+
+width:30px;
+height:90px;
+float:left;
+}
+#blok3_fourth{
+
+width:250px;
+height:90px;
+float:left;
+}
+#blok4_fourth{
+
+width:220px;
+height:90px;
+float:left;
+}
+#blok1_four {
+height: 25px;
+padding-top: 10px;
+    text-align: left;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+#blok2_four, #blok3_four {
+  height: 30px;
+    padding-top: 5px;
+    text-align: left;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;  
+}
+/*five line*/
+#blok1_five{
+
+width:250px;
+height:60px;
+float:left;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 60px;
+    padding-top: 30px;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+#sub__five_block1{
+    float:right;
+    color: #3a3939;
+    text-align: left;
+    font-family: verdana;
+    padding-left: 5px;
+}
+#sub__four_block1{
+    float:right;
+    color: #4ba3f1;
+    text-align: left;
+    font-family: verdana;
+    padding-left: 5px;
+    font-size: 14px;
+}
+#sub__four_block2{
+    float:right;
+    color: black;
+    text-align: left;
+    font-family: verdana;
+    padding-left: 5px;
+    font-size: 12px;
+}
+#blok2_five{
+
+width:150px;
+height:60px;
+float:left;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-right: 21px;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+#blok3_five{
+
+width:250px;
+height:60px;
+float:left;
+text-align: left;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-right: 110px;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+#blok4_five{
+
+width:200px;
+height:60px;
+float:left;
+text-align: left;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-right: 40px;
+    font-family: verdana;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+
+.position_fourth { 
+    width: 850px;
+    height: 90px;
+    bottom: 0;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-color: #e0d7d7;
+}
+.position_head_inside{
+        color: #fff;
+    padding-left: 14px;
+    width: 195px;
+    padding-top: 16px;
+    font-size:20px;
+    font-family: verdana;
+}
+.position_second_img{
+    max-width: 200px;
+    max-height: 70px;
+    height: 45px;
+    border-style: none;
+    border-radius: 0px;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #d4d4d4;
+    padding-top: 15px;
+}
+
 
 /* Page Layout */
 
@@ -111,7 +372,7 @@ header button {
 
 .main h2 {
     font-size: 42px;
-    margin-bottom: 55px;
+    margin-bottom: 25px;
 }
 
 .main p { /*отступы он нижней части текста p*/

@@ -25,7 +25,6 @@ public class Flight implements Serializable {
 	public Flight() {
 
 	}
-
 	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
 			String arrivalDate, String arrivalTime, int flightId) {
 		super();
@@ -37,6 +36,28 @@ public class Flight implements Serializable {
 		this.arrivalDate = arrivalDate;
 		this.arrivalTime = arrivalTime;
 		this.flightId=flightId;
+	}
+
+	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
+			String arrivalDate, String arrivalTime, int flightId, Plane plane) {
+		super();
+		this.fromCode = fromCode;
+		this.fromDirection = fromDirection;
+		this.departureDate = departureDate;
+		this.departureTime = departureTime;
+		this.toDirection = toDirection;
+		this.arrivalDate = arrivalDate;
+		this.arrivalTime = arrivalTime;
+		this.plane=plane;
+		this.flightId=flightId;
+	}
+
+	public Plane getPlane() {
+		return plane;
+	}
+
+	public void setPlane(Plane plane) {
+		this.plane = plane;
 	}
 
 	public int getFlightId() {

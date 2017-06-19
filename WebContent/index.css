@@ -16,7 +16,12 @@ body {
 }
 
 /* Page Layout */
-
+.greeting{
+    color: #e64d4d;
+    display: flex;
+    margin-left: 70%;
+    vertical-align: sub;
+}
 .container{
     max-width: 1200px;
     background-color: #fff;
@@ -52,7 +57,7 @@ header{
 header nav {
     list-style: none;
     
-    display: flex;
+    /*display: flex;*/
     align-items: baseline;
 }
 
@@ -70,9 +75,10 @@ header button {
     text-transform: uppercase;
 }
 .left {
+    margin-left: 75%;
 }
 .right {
-  margin-left: -800px;
+  margin-left: 0%;
 }
 .language {
     background-color: #FBFBEF;

@@ -49,10 +49,10 @@ public class FlightListDaoImpl implements FlightListDao {
 					ps.setString(3, departureDateSQL);
 					ps.setString(4, arrivalDateSQL);
 					ResultSet rs = ps.executeQuery();
+					Direction fromDirection = new Direction();
+					Direction fromDirectionCode = new Direction();
+					Direction toDirection = new Direction();
 					while (rs.next()) { // цикл для всех записей из БД
-						Direction fromDirection = new Direction();
-						Direction fromDirectionCode = new Direction();
-						Direction toDirection = new Direction();
 
 						// String fromDirectionString = rs.getString(1);
 						// Direction d = new Direction();
