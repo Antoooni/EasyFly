@@ -4,6 +4,7 @@ import static by.htp.util.ConstantValue.*;
 
 import java.util.HashMap;
 
+import by.htp.servlet.command.BuyTicketAction;
 import by.htp.servlet.command.CommandAction;
 import by.htp.servlet.command.CreateNewUserAction;
 import by.htp.servlet.command.FlightInfoAction;
@@ -23,6 +24,7 @@ public final class FillAndChooseAction {
 		actionsMap.put(ACTION_REGISTRATION, new RegistrationAction());
 		actionsMap.put(ACTION_CREATE_USER, new CreateNewUserAction());
 		actionsMap.put(ACTION_FLIGHT_INFO, new FlightInfoAction());
+		actionsMap.put(ACTION_BUY_TICKET, new BuyTicketAction());
 		
 		return actionsMap;
 	}

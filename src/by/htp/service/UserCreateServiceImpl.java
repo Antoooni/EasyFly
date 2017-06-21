@@ -18,7 +18,7 @@ public class UserCreateServiceImpl implements UserCreateService{
 		newUser.setUserName(user.getUserName());
 		newUser.setUserSurname(user.getUserSurname());
 		newUser.setUserEmail(user.getUserEmail());
-		newUser.setTicketId(0);
+		newUser.setTicket(null);
 		return newUser;
 	}
 

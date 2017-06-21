@@ -1,9 +1,6 @@
 package by.htp.bin;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
-
 public class Flight implements Serializable {
 	/**
 	 * 
@@ -21,13 +18,14 @@ public class Flight implements Serializable {
 	private String arrivalTime;
 	private Plane plane;
 	private double basicTariff;
+	private String flightCode;
 
 	public Flight() {
 
 	}
 	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
-			String arrivalDate, String arrivalTime, int flightId) {
-		super();
+			String arrivalDate, String arrivalTime, int flightId, String flightCode) {
+		super(); 
 		this.fromCode = fromCode;
 		this.fromDirection = fromDirection;
 		this.departureDate = departureDate;
@@ -36,10 +34,11 @@ public class Flight implements Serializable {
 		this.arrivalDate = arrivalDate;
 		this.arrivalTime = arrivalTime;
 		this.flightId=flightId;
+		this.flightCode=flightCode;
 	}
 
 	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
-			String arrivalDate, String arrivalTime, int flightId, Plane plane) {
+			String arrivalDate, String arrivalTime, int flightId, Plane plane, String flightCode) {
 		super();
 		this.fromCode = fromCode;
 		this.fromDirection = fromDirection;
@@ -50,6 +49,7 @@ public class Flight implements Serializable {
 		this.arrivalTime = arrivalTime;
 		this.plane=plane;
 		this.flightId=flightId;
+		this.fromCode=fromCode;
 	}
 
 	public Plane getPlane() {
@@ -132,6 +132,12 @@ public class Flight implements Serializable {
 		this.basicTariff = basicTariff;
 	}
 
+	public String getFlightCode() {
+		return flightCode;
+	}
+	public void setFlightCode(String flightCode) {
+		this.flightCode = flightCode;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -143,6 +149,7 @@ public class Flight implements Serializable {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((departureDate == null) ? 0 : departureDate.hashCode());
 		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
+		result = prime * result + ((flightCode == null) ? 0 : flightCode.hashCode());
 		result = prime * result + flightId;
 		result = prime * result + ((fromCode == null) ? 0 : fromCode.hashCode());
 		result = prime * result + ((fromDirection == null) ? 0 : fromDirection.hashCode());
@@ -150,7 +157,6 @@ public class Flight implements Serializable {
 		result = prime * result + ((toDirection == null) ? 0 : toDirection.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -182,6 +188,11 @@ public class Flight implements Serializable {
 				return false;
 		} else if (!departureTime.equals(other.departureTime))
 			return false;
+		if (flightCode == null) {
+			if (other.flightCode != null)
+				return false;
+		} else if (!flightCode.equals(other.flightCode))
+			return false;
 		if (flightId != other.flightId)
 			return false;
 		if (fromCode == null) {
@@ -206,15 +217,13 @@ public class Flight implements Serializable {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Flight [flightId=" + flightId + ", fromDirection=" + fromDirection + ", departureDate=" + departureDate
 				+ ", departureTime=" + departureTime + ", fromCode=" + fromCode + ", toDirection=" + toDirection
 				+ ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", plane=" + plane
-				+ ", basicTariff=" + basicTariff + "]";
+				+ ", basicTariff=" + basicTariff + ", flightCode=" + flightCode + "]";
 	}
-
 	
 
 }

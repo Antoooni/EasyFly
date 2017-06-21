@@ -1,5 +1,9 @@
 package by.htp.dao.factory;
 
+import by.htp.dao.CreatePassengerDao;
+import by.htp.dao.CreatePassengerDaoImpl;
+import by.htp.dao.CreateTicketDao;
+import by.htp.dao.CreateTicketDaoImpl;
 import by.htp.dao.DirectionCodeDao;
 import by.htp.dao.DirectionCodeDaoImpl;
 import by.htp.dao.FlightDirectionDao;
@@ -45,5 +49,11 @@ public class DaoFactory {
 	}
 	public SelectedFlightDao getSelectedFlightDao(){
 		return new SelectedFlightDaoImpl();
+	}
+	public CreatePassengerDao getCreatePassengerDao(){
+		return new CreatePassengerDaoImpl();
+	}
+	public CreateTicketDao getCreateTicketDao(){
+		return new CreateTicketDaoImpl();
 	}
 }

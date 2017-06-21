@@ -2,6 +2,8 @@ package by.htp.service.factory;
 
 import by.htp.service.AuthorizationService;
 import by.htp.service.AuthorizationServiceImpl;
+import by.htp.service.CreatePassengerService;
+import by.htp.service.CreatePassengerServiceImpl;
 import by.htp.service.DirectionCodeService;
 import by.htp.service.DirectionCodeServiceImpl;
 import by.htp.service.DirectionService;
@@ -52,5 +54,8 @@ public class ServiceFactory {
 
 	public SelectedFlightService getSelectedFlightService() {
 		return new SelectedFlightServiceImpl();
+	}
+	public CreatePassengerService getCreatePassengerService(){
+		return new CreatePassengerServiceImpl();
 	}
 }

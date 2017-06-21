@@ -9,14 +9,15 @@ import java.sql.SQLException;
 
 import javax.naming.NamingException;
 
+import by.htp.bin.User;
 import by.htp.dao.UserAuthorizationDao;
 import by.htp.util.SQLConnectionPool;
 
 public class UserAuthorizationDaoImpl implements UserAuthorizationDao {
 
 	@Override
-	public String getUserName(String login, String password) {
-		String name = null;
+	public User getUserData(String login, String password) {
+		User user = new User();
 		Connection connection = null;
 
 		// ResourceBundle bundle = ResourceBundle.getBundle("config");
@@ -38,8 +39,10 @@ public class UserAuthorizationDaoImpl implements UserAuthorizationDao {
 				ps.setString(2, password); // код для PreparedStatement
 				ResultSet rs = ps.executeQuery(); // код для PreparedStatement
 				if (rs.next()) {
-					name = rs.getString(1);
-					System.out.println("User name from database: " + name);
+					user.setUserName(rs.getString(1));
+					user.setUserSurname(rs.getString(2));
+					user.setRole(rs.getString(3));
+					System.out.println("User name from database: " + user.getUserName()+" "+user.getUserSurname()+" "+ user.getRole());
 
 				}
 			} catch (NamingException e) {
@@ -52,7 +55,7 @@ public class UserAuthorizationDaoImpl implements UserAuthorizationDao {
 			e.printStackTrace();
 		}
 
-		return name;
+		return user;
 	}
 
 }

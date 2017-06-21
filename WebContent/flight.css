@@ -304,7 +304,114 @@ text-align: left;
     margin: auto;
     width: 10%;
 }
+#details{
+    width: 600px; margin: auto;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.spoiler{
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    border-color: #e2e2e2;
+    border-radius: 5px;
+    background-color: #cadcea;
+    margin-top: 25px;
 
+}
+#spoiler_head{
+text-align: left;
+font-family: verdana;
+padding-left: 15px;
+width:600px;
+color: #fff;
+
+}
+#first{
+
+    width: 400px;
+    height: 40px;
+    padding-top: 5px;
+    margin: auto;
+
+}
+#first_left{
+    padding-top: 10px;
+    width: 200px;
+    height: 40px;
+    float:left;
+    font-family: verdana;
+}
+#first_left_baggage{
+    padding-left: 80px;
+    padding-top: 10px;
+    width: 200px;
+    height: 40px;
+    float:left;
+    font-family: verdana;
+}
+#first_right{
+    padding-top: 10px;
+     width: 200px;
+    height: 40px;
+    float:left;
+}
+#passenger_name{
+    background-color: #fff;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8d8d8;
+    height: 25px;
+    font-family: verdana;
+    text-align: center;
+    color: #4a4a4a;
+    text-transform: uppercase;
+}
+#passenger_age{
+    background-color: #fff;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8d8d8;
+    height: 25px;
+    font-family: verdana;
+    text-align: center;
+    color: #4a4a4a;
+}
+#passenger_date{
+    background-color: #fff;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8d8d8;
+    height: 25px;
+    font-family: verdana;
+    text-align: center;
+    color: #4a4a4a;
+}
+#passenger_sex{
+    background-color: #fff;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8d8d8;
+    height: 25px;
+    font-family: verdana;
+    text-align: center;
+    color: #4a4a4a;
+}
+#baggage{
+    margin: auto;
+}
+#baggage_img{
+    padding-top: 20px;
+    width: 600px;
+    height: 200px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
 /* Header */
 
 header{
@@ -488,7 +595,34 @@ label {
 .popupText{
 
 }
-
+.go_search{
+    width: 100px;
+    height: 30px;
+    background-color: #ef5350;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 25px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: auto;
+}
+#buy_it{
+    width: 400px;
+    height: 45px;
+    background-color: #f9f7f7;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#buy_it_button{
+    width: 110px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+}
 
 
 

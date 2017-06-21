@@ -18,13 +18,13 @@ import by.htp.util.SQLConnectionPool;
 public class UserCreateDaoImpl implements UserCreateDao {
 	Connection connection;
 	User user;
-
-	ResourceBundle bundle = ResourceBundle.getBundle("config");
-	String dbUrl = bundle.getString("db.url");
-	String dbUser = bundle.getString("db.login");
-	String dbPass = bundle.getString("db.pass");
-	// System.out.println(dbUrl+" "+" "+dbUser+" "+ dbPass);
-	String dbName = bundle.getString("db.driver.name");
+//
+//	ResourceBundle bundle = ResourceBundle.getBundle("config");
+//	String dbUrl = bundle.getString("db.url");
+//	String dbUser = bundle.getString("db.login");
+//	String dbPass = bundle.getString("db.pass");
+//	// System.out.println(dbUrl+" "+" "+dbUser+" "+ dbPass);
+//	String dbName = bundle.getString("db.driver.name");
 
 	@Override
 	public User createUser(User user) {

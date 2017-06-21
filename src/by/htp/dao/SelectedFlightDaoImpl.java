@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.NamingException;
+import javax.servlet.http.HttpSession;
 
 import by.htp.bin.Direction;
 import by.htp.bin.Flight;
@@ -15,6 +16,7 @@ import by.htp.bin.Plane;
 import by.htp.util.SQLConnectionPool;
 
 public class SelectedFlightDaoImpl implements SelectedFlightDao {
+	
 	
 
 	@Override
@@ -56,7 +58,8 @@ public class SelectedFlightDaoImpl implements SelectedFlightDao {
 					
 					plane.setPlaneName(rs.getString(10));
 					selectedFlight.setPlane(plane);
-
+					
+					selectedFlight.setFlightCode(rs.getString(11));
 
 
 				}

@@ -4,6 +4,7 @@ import static by.htp.util.ConstantValue.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import by.htp.bin.Flight;
 import by.htp.service.SelectedFlightService;
@@ -29,6 +30,8 @@ public class FlightInfoAction implements CommandAction {
 		
 		Flight flight = selectedFlightService.flight(flightId);
 		request.setAttribute(REQUEST_PARAM_FLIGHT_INFO, flight);
+		HttpSession session = request.getSession(true);
+		session.setAttribute("flight", flight);
 		
 		System.out.println(flight.toString());
 		return page;

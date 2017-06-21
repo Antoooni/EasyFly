@@ -8,28 +8,36 @@ public class User implements Serializable {
 	private String userName;
 	private String userSurname;
 	private String userEmail;
-	private int ticketId;
 	private LogonData logonData;
+	private String role;
+	private Ticket ticket;
 
 	public User() {
 
 	}
 
-	public User(String userName, String userSurname, String userEmail, int ticketId) {
+	public User(String userName, String userSurname, String userEmail, Ticket ticket) {
 		super();
 		this.userName = userName;
 		this.userSurname = userSurname;
 		this.userEmail = userEmail;
-		this.ticketId = ticketId;
+		this.ticket = ticket;
 	}
 
-	public User(String userName, String userSurname, String userEmail, int ticketId, LogonData logonData) {
+	public User(String userName, String userSurname, String userEmail, Ticket ticket, LogonData logonData) {
 		super();
 		this.userName = userName;
 		this.userSurname = userSurname;
 		this.userEmail = userEmail;
-		this.ticketId = ticketId;
+		this.ticket = ticket;
 		this.logonData = logonData;
+	}
+
+	public User(String userName, String userSurname, String role) {
+		super();
+		this.userName = userName;
+		this.userSurname = userSurname;
+		this.role = role;
 	}
 
 	public String getUserName() {
@@ -56,14 +64,6 @@ public class User implements Serializable {
 		this.userEmail = userEmail;
 	}
 
-	public int getTicketId() {
-		return ticketId;
-	}
-
-	public void setTicketId(int ticketId) {
-		this.ticketId = ticketId;
-	}
-
 	public LogonData getLogonData() {
 		return logonData;
 	}
@@ -72,12 +72,29 @@ public class User implements Serializable {
 		this.logonData = logonData;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((logonData == null) ? 0 : logonData.hashCode());
-		result = prime * result + ticketId;
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		result = prime * result + ((ticket == null) ? 0 : ticket.hashCode());
 		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		result = prime * result + ((userSurname == null) ? 0 : userSurname.hashCode());
@@ -98,7 +115,15 @@ public class User implements Serializable {
 				return false;
 		} else if (!logonData.equals(other.logonData))
 			return false;
-		if (ticketId != other.ticketId)
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
+		if (ticket == null) {
+			if (other.ticket != null)
+				return false;
+		} else if (!ticket.equals(other.ticket))
 			return false;
 		if (userEmail == null) {
 			if (other.userEmail != null)
@@ -121,7 +146,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User [userName=" + userName + ", userSurname=" + userSurname + ", userEmail=" + userEmail
-				+ ", ticketId=" + ticketId + ", logonData=" + logonData + "]";
+				+ ", logonData=" + logonData + ", role=" + role + ", ticket=" + ticket + "]";
 	}
-
+	
 }

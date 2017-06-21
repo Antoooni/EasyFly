@@ -35,7 +35,7 @@
             
         </nav>
         <div class="greeting">
-                    Welcome <c:out value="${user_name}" />
+                    Welcome <c:out value="${user_data}" />
         </div>
 
         <form name="val_form" action="Main" method="GET" >

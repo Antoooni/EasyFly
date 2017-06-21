@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import by.htp.bin.FlightDirection;
+import by.htp.bin.User;
 import by.htp.service.AuthorizationService;
 import by.htp.service.DirectionService;
 import by.htp.service.factory.ServiceFactory;
 
 public class LoginCommandAction implements CommandAction {
-	
+
 	private AuthorizationService authorizationService;
 	private DirectionService directionService;
 	private ServiceFactory serviceFactory = new ServiceFactory();
@@ -32,26 +33,19 @@ public class LoginCommandAction implements CommandAction {
 
 		HttpSession session = request.getSession(true);
 		String page = PAGE_DEFAULT;
-		String userData;
-		userData = authorizationService.userData(login, password);
+		User user = new User();
+		user = authorizationService.userData(login, password);
 		// try {
-		if (userData != null) {
+		if (user != null) {
 			List<FlightDirection> flightDirection = directionService.listDirections();
 			// вывести список направлений dropdown
 			request.setAttribute(REQUEST_PARAM_LIST_DIRECTION, flightDirection);
 
-			session.setAttribute(REQUEST_PARAM_USER_NAME, userData);
+			session.setAttribute(REQUEST_PARAM_USER, user.getUserName());
 			page = PAGE_AUTHORIZED;
 		} else {
-			page = PAGE_AUTHORIZED;
+			page = PAGE_ERROR;
 		}
-		// }
-		// catch (ServiceNoSuchUserException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// page = PAGE_ERROR;
-		// request.setAttribute(REQUEST_PARAM_ERROR_MSG, e.getMessage());
-		// }
 
 		return page;
 	}
