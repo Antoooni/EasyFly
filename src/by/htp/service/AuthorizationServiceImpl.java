@@ -1,5 +1,6 @@
 package by.htp.service;
 
+import by.htp.bin.User;
 import by.htp.dao.UserAuthorizationDao;
 import by.htp.dao.factory.DaoFactory;
 
@@ -15,9 +16,8 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 	}
 
 	@Override
-	public String userData(String login, String password) {
-		String name = daoNme.getUserName(login, password);
-		return name;
+	public User userData(String login, String password) {
+		return daoNme.getUserData(login, password);
 	}
 
 }

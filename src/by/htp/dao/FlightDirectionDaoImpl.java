@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javax.naming.NamingException;
 
 import by.htp.bin.FlightDirection;
+import by.htp.dao.FlightDirectionDao;
 import by.htp.util.SQLConnectionPool;
 
 public class FlightDirectionDaoImpl implements FlightDirectionDao {

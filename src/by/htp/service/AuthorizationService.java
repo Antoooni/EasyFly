@@ -1,5 +1,7 @@
 package by.htp.service;
 
+import by.htp.bin.User;
+
 public interface AuthorizationService {
-	String userData(String login, String password);
+	User userData(String login, String password);
 }

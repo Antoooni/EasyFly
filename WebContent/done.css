@@ -16,23 +16,7 @@ body {
 }
 
 /* Page Layout */
-.greeting{
-    color: #e64d4d;
-    display: flex;
-    margin-left: 70%;
-    vertical-align: sub;
-}
-.container{
-    max-width: 1200px;
-    background-color: #fff;
-    margin: 0 auto;
-    padding: 0 60px;
-    display: flex;
-    flex-direction: column;
 
-    background-image: url("plane.jpg");
-    background-size: cover;
-}
 .container_flights_list{
     max-width: 1200px;
     background-color: #fff;
@@ -40,6 +24,26 @@ body {
     padding: 0 60px;
     display: flex;
     flex-direction: column;
+    /*background-image: url("plane_banner.jpg");
+    background-size: cover;*/
+}
+.table{
+    margin: auto;
+     border-radius: 5px 5px 5px 5px;
+     border-collapse: collapse;
+}
+.table_field{
+     
+}
+.text_passenger_color{
+    color: #ef5350;
+    margin: 10px;
+}
+.baggage_img{
+    color: #ef5350;
+    margin: auto;
+    max-height: 250px;
+    max-width: 600px;
 }
 
 /* Header */
@@ -57,7 +61,7 @@ header{
 header nav {
     list-style: none;
     
-    /*display: flex;*/
+    display: flex;
     align-items: baseline;
 }
 
@@ -74,30 +78,13 @@ header button {
     cursor: pointer;
     text-transform: uppercase;
 }
-.left {
-    margin-left: 75%;
-}
-.right {
-  margin-left: 0%;
-}
-.language {
-    background-color: #FBFBEF;
-    border: none;
-    border-radius: 50%;
-    opacity: 0.7;
-    padding: 8px 25px;
-    color:#ef5350;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-transform: 
-    width: 30px;
-    height:  30px;
-}
+
 
 /* Main Section */
 
 .main-and-sidebar-wrapper {
     display: flex;
+    margin: auto;
     
 
 }
@@ -118,7 +105,8 @@ header button {
 
 .main { /*главный контейнер*/
     text-align: center;
-   
+    /*margin-right: 60px;*/
+    /*background: url(images/hand.png);*/
     flex: 3;
 }
 
@@ -134,66 +122,8 @@ header button {
 .main img {
     width: 100%;
 }
-.search_frame {
-  background: rgba(255,255,255,0.2);
-  margin: auto;
-  /*margin-top: 27%;*/
-  width: 750px;
-  padding: 30px;
-  text-align: left: ;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  border-width: 1px 1px 1px 1px; 
-  border-style: solid;
-   border-color: rgba(255,255,255,0.4);
-  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-  -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-  box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-}
-.go_search{
-    width: 100px;
-    height: 30px;
-    background-color: #ef5350;
-    border-radius: 3px;
-    border: none;
-    padding: 8px 25px;
-    color: #fff;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-.from{
-  background: rgba(255,255,255,0.6);
-  margin: 0 auto;
-  border-radius: 3px;
-  width: 140px;
-  height: 30px;
-  text-transform: uppercase;
-
-  }
-  
-  .search_flight_date{
-  background: rgba(255,255,255,0.6);
-  margin:  auto;
-  border-radius: 3px;
-  width: 140px;
-  height: 30px;
-  text-align: center;
-  font: normal 16px sans-serif;
-
-  }
 
 
-/* Sidebar 
-
-.sidebar {
-    border: 1px solid #a2a2a2;
-    padding: 20px;
-
-    flex: 1;
-}*/
-
-/* Footer */
 
 footer {
     color: #ef5350;
@@ -223,18 +153,6 @@ footer p {
 
     }
 }
-/*
-@media (max-width: 300px) {
-    .completed {
-        flex-direction: column;
-    }
-
-    .main {
-        margin-right: 0;
-        margin-bottom: 50px;
-
-    }
-}*/
 .modal {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
@@ -273,30 +191,8 @@ footer p {
         text-decoration: none;
         cursor: pointer;
     }
-/* input поля ввода в order.jsp*/
-    .edit {
-
-        border:1px solid #9E9E9E;
-        border-radius: 3px; //закругление углов (общее)
-       -webkit-border-radius: 3px; //закругление углов (Google Chrome)
-       -moz-border-radius: 3px; //закругление углов (FireFox)
-       -khtml-border-radius: 3px; //закругление углов (Safari)
-        background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
-        outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
-        height: 30px; // высота на свое усмотрение
-        width: 100px; // ширина на свое усмотрение
-        color: #000000;
-        padding: 3px;
-        margin-top: 2px;
-        margin-bottom: 2px;
-        font-size: 11px;
-        font-family: Verdana;
-        background: #FFF;
-
-    }
 }
-/*для кнопок заказа
-https://habrahabr.ru/post/64530/
+
 */
 .field {
     clear:both; text-align:left; line-height:25px;
@@ -331,17 +227,6 @@ label {
 }
 .popupText{
 
-}
-.circle {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255,255,255,0.9); 
-    border-color: rgba(255,255,255, 0.9);
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-style: solid;
-    border-radius: 50px;
-    border-width: 1px 1px 1px 1px;
 }
 
 

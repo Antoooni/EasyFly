@@ -1,14 +1,12 @@
 package by.htp.bin;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
-
 public class Flight implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8813143772387838912L;
+	private int flightId;
 	private Direction fromDirection;
 	// private String arrivalCity;
 	private String departureDate;
@@ -20,13 +18,27 @@ public class Flight implements Serializable {
 	private String arrivalTime;
 	private Plane plane;
 	private double basicTariff;
+	private String flightCode;
 
 	public Flight() {
 
 	}
+	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
+			String arrivalDate, String arrivalTime, int flightId, String flightCode) {
+		super(); 
+		this.fromCode = fromCode;
+		this.fromDirection = fromDirection;
+		this.departureDate = departureDate;
+		this.departureTime = departureTime;
+		this.toDirection = toDirection;
+		this.arrivalDate = arrivalDate;
+		this.arrivalTime = arrivalTime;
+		this.flightId=flightId;
+		this.flightCode=flightCode;
+	}
 
 	public Flight(Direction fromCode, Direction fromDirection, String departureDate, String departureTime, Direction toDirection,
-			String arrivalDate, String arrivalTime) {
+			String arrivalDate, String arrivalTime, int flightId, Plane plane, String flightCode) {
 		super();
 		this.fromCode = fromCode;
 		this.fromDirection = fromDirection;
@@ -35,6 +47,25 @@ public class Flight implements Serializable {
 		this.toDirection = toDirection;
 		this.arrivalDate = arrivalDate;
 		this.arrivalTime = arrivalTime;
+		this.plane=plane;
+		this.flightId=flightId;
+		this.fromCode=fromCode;
+	}
+
+	public Plane getPlane() {
+		return plane;
+	}
+
+	public void setPlane(Plane plane) {
+		this.plane = plane;
+	}
+
+	public int getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
 	}
 
 	public Direction getFromDirection() {
@@ -101,6 +132,12 @@ public class Flight implements Serializable {
 		this.basicTariff = basicTariff;
 	}
 
+	public String getFlightCode() {
+		return flightCode;
+	}
+	public void setFlightCode(String flightCode) {
+		this.flightCode = flightCode;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -112,12 +149,14 @@ public class Flight implements Serializable {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((departureDate == null) ? 0 : departureDate.hashCode());
 		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
+		result = prime * result + ((flightCode == null) ? 0 : flightCode.hashCode());
+		result = prime * result + flightId;
+		result = prime * result + ((fromCode == null) ? 0 : fromCode.hashCode());
 		result = prime * result + ((fromDirection == null) ? 0 : fromDirection.hashCode());
 		result = prime * result + ((plane == null) ? 0 : plane.hashCode());
 		result = prime * result + ((toDirection == null) ? 0 : toDirection.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -149,6 +188,18 @@ public class Flight implements Serializable {
 				return false;
 		} else if (!departureTime.equals(other.departureTime))
 			return false;
+		if (flightCode == null) {
+			if (other.flightCode != null)
+				return false;
+		} else if (!flightCode.equals(other.flightCode))
+			return false;
+		if (flightId != other.flightId)
+			return false;
+		if (fromCode == null) {
+			if (other.fromCode != null)
+				return false;
+		} else if (!fromCode.equals(other.fromCode))
+			return false;
 		if (fromDirection == null) {
 			if (other.fromDirection != null)
 				return false;
@@ -166,12 +217,12 @@ public class Flight implements Serializable {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
-		return "Flight [fromDirection=" + fromDirection + ", departureDate=" + departureDate + ", departureTime="
-				+ departureTime + ", toDirection=" + toDirection + ", arrivalDate=" + arrivalDate + ", arrivalTime="
-				+ arrivalTime + ", plane=" + plane + ", basicTariff=" + basicTariff + "]";
+		return "Flight [flightId=" + flightId + ", fromDirection=" + fromDirection + ", departureDate=" + departureDate
+				+ ", departureTime=" + departureTime + ", fromCode=" + fromCode + ", toDirection=" + toDirection
+				+ ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", plane=" + plane
+				+ ", basicTariff=" + basicTariff + ", flightCode=" + flightCode + "]";
 	}
 	
 

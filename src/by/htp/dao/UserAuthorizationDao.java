@@ -1,5 +1,7 @@
 package by.htp.dao;
 
+import by.htp.bin.User;
+
 public interface UserAuthorizationDao {
-	String getUserName(String login, String password);
+	User getUserData(String login, String password);
 }

@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javax.naming.NamingException;
 
 import by.htp.bin.Direction;
+import by.htp.dao.DirectionCodeDao;
 import by.htp.util.SQLConnectionPool;
 
 public class DirectionCodeDaoImpl implements DirectionCodeDao {
@@ -30,11 +31,11 @@ public class DirectionCodeDaoImpl implements DirectionCodeDao {
 
 		try {
 			try {
-				 Class.forName(dbName);
-				 connection = DriverManager.getConnection(dbUrl, dbUser,
-				 dbPass);
-//				SQLConnectionPool sqlConnection = new SQLConnectionPool();
-//				connection = sqlConnection.getConnection();
+//				 Class.forName(dbName);
+//				 connection = DriverManager.getConnection(dbUrl, dbUser,
+//				 dbPass);
+				SQLConnectionPool sqlConnection = new SQLConnectionPool();
+				connection = sqlConnection.getConnection();
 				PreparedStatement ps = connection.prepareStatement(SQL_STATEMENT_DIRECTION_CODE);
 				ps.setString(1, direction); // код для PreparedStatement
 				ResultSet rs = ps.executeQuery(); // код для PreparedStatement
@@ -43,7 +44,7 @@ public class DirectionCodeDaoImpl implements DirectionCodeDao {
 					System.out.println("Converted code: " + directionCode);
 
 				}
-			} catch (ClassNotFoundException e) {
+			} catch (NamingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} finally {

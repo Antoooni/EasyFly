@@ -30,7 +30,7 @@
             
         </nav>
 
-        <button class="left" id="myBtn" >LOG IN</button>
+        <!--<button class="left" id="myBtn" >LOG IN</button>
 
         <form name="registration" action="Main" method="GET" id="registration">
                 <input type="hidden" name="action" value="registration">
@@ -38,7 +38,6 @@
         </form>
 
         <div id="myPopUp" class="modal">
-              <!--Modal content -->
               <div class="modal-content">
                 <span class="close">&times;</span>
                 <p>
@@ -60,7 +59,7 @@
                     </form>
                 </p>
               </div>
-        </div> 
+        </div> -->
     </header>
 
     <div class="main-and-sidebar-wrapper"> 
@@ -104,19 +103,20 @@
                     <tr>
                       <th>#</th>
                       <th>selection</th>
-                      <th>From airport code</th>
+                      <th>Code</th>
                       <th>From city</th>
                       <th>Departure date</th>
                       <th>Departure time</th>
-                      <th>To airport code</th>
+                      <th>Code</th>
                       <th>To city</th>
                       <th>Arrival date</th>
                       <th>Arrival time</th>
+                      <th>Cancel</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <td colspan="10">
+                      <td colspan="11">
                       <div id="no-paging">&nbsp;</div>
                     </tr>
                   </tfoot>
@@ -129,7 +129,7 @@
                             <div>
                               <form name="buy" action="Main" method="GET" id="buy">
                                   <input type="hidden" name="action" value="buy">
-                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id">Buy it</button>
+                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id">Select it</button>
                               </form>
                             </div>
                            </td>
@@ -141,6 +141,7 @@
                            <td><c:out value="${i.getToDirection().getCity()}" /></td>
                            <td><c:out value="${i.getArrivalDate()}" /> </td>
                            <td><c:out value="${i.getArrivalTime()}" /></td>
+                           <td><c:out value="${i.getIsCancel()}" /></td>
                          </tr>
                        </tbody>
                       </h3>
@@ -157,49 +158,7 @@
 	    </footer>
 	</div>
 	
- <script type="text/javascript"> <!--
-        function validate_form() {
-            valid = true;
-            if (document.val_form.login.value == "") {
-                alert("Пожалуйста заполните поле 'Login'.");
-                valid = false;
-                return valid;
-            }
-            if (document.val_form.pass.value == "") {
-                alert("Пожалуйста заполните поле 'Password'.");
-                valid = false;
-            return valid;
-            }
-        }
-   </script>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myPopUp');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+ 
 
    
 

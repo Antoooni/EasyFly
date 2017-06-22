@@ -281,7 +281,7 @@ Not advised to edit stuff below this line
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   border-radius:3px;
-  box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0);
 }
 
 .formoid-solid-red input[type=button][disabled] {
@@ -306,78 +306,7 @@ Not advised to edit stuff below this line
   box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
 }
 
-/* File input */
-.formoid-solid-red .element-file label{
-  position: relative;
-}
-.formoid-solid-red .element-file .title{
-  position: static;
-}
-.formoid-solid-red .element-file .button {
-  z-index: 1;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  bottom: 4px;
-  float: none;
-  font-size: 1em;
-  color: #fff;
 
-  padding: 1.8% 1.2em 0 1.2em;
-  border-radius: 3px;
-  cursor: pointer;
-  box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0.2);
-
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-}
-.formoid-solid-red .element-file .button:active{
-  box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
-}
-.formoid-solid-red .element-file .file_text{
-  overflow: hidden;
-  color: #A9A9A9;
-  background-color: #fff;
-  -webkit-transition: border-color .25s ease-in-out;
-  transition: border-color .25s ease-in-out;
-}
-
-.formoid-solid-red .element-file .file_input {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  width: 100%;
-}
-* html .formoid-solid-red .element-file .file_input,
-*+html .formoid-solid-red .element-file .file_input{
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  width: auto;
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-* html .formoid-solid-red .element-file .button,
-*+html .formoid-solid-red .element-file .button{
-  display: none;
-}
-* html .formoid-solid-red .element-file label,
-*+html .formoid-solid-red .element-file label,
-* html .formoid-solid-red .element-file .file_text,
-*+html .formoid-solid-red .element-file .file_text{
-  border: none;
-}
-* html .formoid-solid-red .element-file .title,
-*+html .formoid-solid-red .element-file .title{
-  display: block;
-}
 
 
 /* Radio & checkbox */
@@ -635,11 +564,11 @@ Not advised to edit stuff below this line
 
 /* NAME last first */
 .formoid-solid-red .element-name .nameFirst{
-  width: 40%;
+  width: 43.7%;
   *width: 39%;
   left: 0;
   display: inline-block;
-  margin-right: 5%;
+  /*margin-right: 5%;*/
   vertical-align: top;
   zoom: 1;
   *display: inline;
@@ -652,37 +581,7 @@ Not advised to edit stuff below this line
   zoom: 1;
   *display: inline;
 }
-/* ADDRESS */
-.formoid-solid-red .element-address .city,
-.formoid-solid-red .element-address .zip{
-  width: 47%;
-  *width: 44%;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-  margin-right: 6%;
-}
-.formoid-solid-red .element-address .state,
-.formoid-solid-red .element-address .country{
-  width: 47%;
-  *width: 44%;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-}
-.formoid-solid-red .element-address .country select{
-  cursor: pointer;
-}
-.formoid-solid-red .element-address label,
-.formoid-solid-red .element-name label{
-  font-size: 0.8em;
-}
-.formoid-solid-red .element-address label.title,
-.formoid-solid-red .element-name label.title{
-  font-size: 1em;
-}
+
 
 /* type number */
 .formoid-solid-red input[type=number]::-webkit-inner-spin-button, 
@@ -836,25 +735,7 @@ Not advised to edit stuff below this line
   background-color: #B13C30;
 }
 
-/* File input */
-.formoid-solid-red .element-file .button {
-  background-color: #E74C3C;
-}
-.formoid-solid-red .element-file .file_text{
-  border-color: #bdc3c7;
-}
-.formoid-solid-red .element-file label:hover .file_text{
-  border-color: #EE8176;
-}
-.formoid-solid-red .element-file .button:hover {
-  background-color: #EE8176;
-}
-.formoid-solid-red .element-file .button:active {
-  background-color: #B13C30;
-}
-.formoid-solid-red .element-file label:active .file_text{
-  border-color: #E74C3C;
-}
+
 
 /* element-submit + element-text */
 .formoid-solid-red > .submit,
@@ -889,18 +770,7 @@ Not advised to edit stuff below this line
   color: #E74C3C;
 }
 
-/* rating */
-.formoid-solid-red .rating-star:after,
-.formoid-solid-red .rating:hover .rating-star:after {
-  color: #bdc3c7;
-}
-.formoid-solid-red .rating:hover .rating-star:hover:after,
-.formoid-solid-red .rating:hover .rating-star:hover ~ .rating-star:after {
-  color: #EE8176;
-}
-.formoid-solid-red .rating-input:checked ~ .rating-star:after {
-  color: #E74C3C;
-}
+
 
 
 .formoid-solid-red input[type=text]:hover,
@@ -943,78 +813,10 @@ Not advised to edit stuff below this line
 
 
 
-/* bootstrap select */
-.formoid-solid-red .dropdown-menu li.active > a,
-.formoid-solid-red .dropdown-menu li.selected > a,
-.formoid-solid-red .dropdown-menu li.active > a.highlighted,
-.formoid-solid-red .dropdown-menu li.selected > a.highlighted,
-.formoid-solid-red .dropdown-inverse li.active > a,
-.formoid-solid-red .dropdown-inverse li.selected > a {
-  background-color: #E74C3C;
-}
-.formoid-solid-red .btn.btn-primary:hover,
-.formoid-solid-red .btn.btn-primary:focus,
-.formoid-solid-red .btn-group:focus .btn.btn-primary.dropdown-toggle {
-  border-color: #EE8176;
-}
-.formoid-solid-red .btn.btn-primary:active,
-.formoid-solid-red .btn-group.open .btn.btn-primary.dropdown-toggle,
-.formoid-solid-red .btn.btn-primary.active,
-.formoid-solid-red .dropdown-menu li.active > a:hover,
-.formoid-solid-red .dropdown-menu li.selected > a:hover,
-.formoid-solid-red .dropdown-menu li.active > a.highlighted:hover,
-.formoid-solid-red .dropdown-menu li.selected > a.highlighted:hover,
-.formoid-solid-red .dropdown-menu li.active > a:focus,
-.formoid-solid-red .dropdown-menu li.selected > a:focus,
-.formoid-solid-red .dropdown-menu li.active > a.highlighted:focus,
-.formoid-solid-red .dropdown-menu li.selected > a.highlighted:focus {
-  border-color: #E74C3C;
-}
-.formoid-solid-red .dropdown-arrow {
-  border-bottom: 8px solid #E74C3C;
-}
-.formoid-solid-red .dropdown-menu {
-  border: 2px solid #E74C3C;
-}
 
 
 
 
-/* datepicker */
-.datepicker {
-  border: 2px solid #E74C3C;
-}
-.datepicker:before {
-  border-bottom: 7px solid #E74C3C;
-}
-.datepicker td.active,
-.datepicker td.active:hover,
-.datepicker td.active:hover:hover,
-.datepicker td.active:focus,
-.datepicker td.active:hover:focus,
-.datepicker td.active:active,
-.datepicker td.active:hover:active,
-.datepicker td.active.active,
-.datepicker td.active:hover.active,
-.datepicker td.active.disabled,
-.datepicker td.active:hover.disabled,
-.datepicker td.active[disabled],
-.datepicker td.active:hover[disabled],
-.datepicker td.active:active,
-.datepicker td.active:hover:active,
-.datepicker td.active.active,
-.datepicker td.active:hover.active,
-.datepicker td span.active,
-.datepicker td span.active:hover,
-.datepicker td span.active:focus,
-.datepicker td span.active:active,
-.datepicker td span.active.active,
-.datepicker td span.active.disabled,
-.datepicker td span.active[disabled]{
-  color: #ffffff;
-  background-image: none;
-  background-color: #E74C3C;
-}
 
 /* .formoid-solid-red color scheme begin end *//* 
 
@@ -1261,114 +1063,4 @@ bootstrap
 .formoid-solid-red .open > .dropdown-arrow {
   margin-top: 0;
   opacity: 1;
-}/*!
- * Datepicker for Bootstrap
- *
- * Copyright 2012 Stefan Petre
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- */
-.datepicker {
-  width: 14em;
-  position: absolute;
-  background-color: #fff;
-  color: #34495e;
-  font-size: 1em;
-  top: 0;
-  left: 0;
-  padding: 4px;
-  margin-top: 8px;
-  border-radius: 4px;
-  display: none;
-  z-index: 10;
-}
-.datepicker:before {
-  content: '';
-  display: inline-block;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  position: absolute;
-  top: -9px;
-  left: 6px;
-}
-.datepicker:after {
-  content: '';
-  display: inline-block;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
-  position: absolute;
-  top: -6px;
-  left: 7px;
-}
-.datepicker > div {
-  display: none;
-}
-.datepicker table {
-  width: 100%;
-  margin: 0;
-}
-.datepicker td,
-.datepicker th {
-  text-align: center;
-  width: 2.9em;
-  border-radius: 4px;
-}
-.datepicker td.day:hover {
-  background: #eeeeee;
-  cursor: pointer;
-}
-.datepicker td.day.disabled {
-  color: #eeeeee;
-}
-.datepicker td.old,
-.datepicker td.new {
-  color: #999999;
-}
-.datepicker td.active,
-.datepicker td.active:hover {
-  color: #ffffff;
-  background-image: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-.datepicker td span {
-  display: block;
-  width: 1.5em;
-  height: 1.7em;
-  line-height: 1.6;
-  float: left;
-  margin: 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.datepicker .datepicker-months td span,
-.datepicker .datepicker-years td span {
-  width: 3.5em;
-  height: 3em;
-  line-height: 3;
-}
-.datepicker td span:hover {
-  background: #eeeeee;
-}
-.datepicker td span.active {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-.datepicker td span.old {
-  color: #999999;
-}
-.datepicker thead tr:first-child th {
-  cursor: pointer;
-}
-.datepicker thead tr:first-child th:hover {
-  background: #eeeeee;
-}
-.input-append.date .add-on i,
-.input-prepend.date .add-on i {
-  display: block;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
 }
