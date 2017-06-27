@@ -1,0 +1,97 @@
+<div id="content">
+	<div class="position_head">
+		<div class="position_head_inside">Детали перелета</div>
+	</div>
+	<div class="position_first">
+
+		<div id="blok1_first">
+			<div class="position_second_img">
+				<img src="img/logo.png" style="width: 50%">
+			</div>
+		</div>
+		<div id="blok2_first">
+			Полет предоставлен авиакоппанией<br> EasyFly
+		</div>
+	</div>
+	<div class="position_third">
+		<div id="blok1_third">
+			<c:out value="${flight.getFromDirection().getDirectionCode()}" />
+			,
+			<c:out value="${flight.getFromDirection().getDirectionName()}" />
+		</div>
+		<div id="blok2_third">→</div>
+		<div id="blok3_third">
+			<c:out value="${flight.getToDirection().getDirectionCode()}" />
+			,
+			<c:out value="${flight.getToDirection().getDirectionName()}" />
+		</div>
+	</div>
+</div>
+<div class="position_fourth">
+	<div id="blok1_fourth">
+		<div id="sub_block1">
+			<c:out value="${flight.getDepartureTime()}" />
+		</div>
+		<div id="sub_block2">
+			<!--15 июня, четверг-->
+			<c:out value="${flight.getDepartureDate()}" />
+		</div>
+		<div id="sub_block3">
+			<!--Минск-->
+			<c:out value="${flight.getFromDirection().getDirectionName()}" />
+		</div>
+	</div>
+	<div id="blok2_fourth">
+		<img src="img/direction.jpg" style="padding-top: 10px;">
+	</div>
+	<div id="blok3_fourth">
+		<div id="sub_block1">
+			<!--19:30-->
+			<c:out value="${flight.getArrivalTime()}" />
+		</div>
+		<div id="sub_block2">
+			<!--15 июня, четверг-->
+			<c:out value="${flight.getArrivalDate()}" />
+		</div>
+		<div id="sub_block3">
+			<!--Москва-->
+			<c:out value="${flight.getToDirection().getDirectionName()}" />
+		</div>
+	</div>
+	<div id="blok4_fourth">
+		<div id="blok1_four">
+			Выполняет
+			<div id="sub__four_block1">EasyFly</div>
+		</div>
+		<div id="blok2_four">
+			Рейс
+			<div id="sub__four_block2">
+				<c:out value="${flight.getFlightCode()}" />
+			</div>
+		</div>
+		<div id="blok3_four">
+			Самолет
+			<div id="sub__four_block1">
+				<c:out value="${flight.getPlane().getPlaneName()}" />
+			</div>
+		</div>
+	</div>
+</div>
+<div class="position">
+	<div id="blok1_five">
+		Время в пути
+		<div id="sub__five_block1">1 час 25 мин</div>
+	</div>
+	<div id="blok2_five">
+		Класс
+		<div id="sub__five_block1">Economy(c)</div>
+	</div>
+	<div id="blok3_five">
+		Питание
+		<div id="sub__five_block1">Включено</div>
+	</div>
+	<div id="blok4_five">
+		Багаж
+		<div id="sub__five_block1">Не выбрано</div>
+	</div>
+</div>
