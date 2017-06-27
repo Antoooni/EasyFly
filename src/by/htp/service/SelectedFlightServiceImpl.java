@@ -6,10 +6,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class SelectedFlightServiceImpl implements SelectedFlightService {
 	private SelectedFlightDao selectedFlightDao;
-	DaoFactory daoFactory = new DaoFactory();
+//	DaoFactory daoFactory = new DaoFactory();
 
 	public SelectedFlightServiceImpl() {
-		selectedFlightDao = daoFactory.getSelectedFlightDao();
+		selectedFlightDao = DaoFactory.getInstance().getSelectedFlightDao();
 	}
 
 	@Override

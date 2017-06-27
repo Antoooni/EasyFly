@@ -8,7 +8,6 @@ public class Flight implements Serializable {
 	private static final long serialVersionUID = -8813143772387838912L;
 	private int flightId;
 	private Direction fromDirection;
-	// private String arrivalCity;
 	private String departureDate;
 	private String departureTime;
 	private Direction fromCode;

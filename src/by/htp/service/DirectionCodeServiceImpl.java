@@ -6,10 +6,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class DirectionCodeServiceImpl implements DirectionCodeService {
 	private DirectionCodeDao directionCode;
-	DaoFactory daoFactory = new DaoFactory();
+//	DaoFactory daoFactory = new DaoFactory();
 
 	public DirectionCodeServiceImpl() {
-		directionCode = daoFactory.getDirectionCodeDao();
+		directionCode = DaoFactory.getInstance().getDirectionCodeDao();
 	}
 
 	@Override

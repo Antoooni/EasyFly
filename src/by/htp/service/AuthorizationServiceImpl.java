@@ -7,11 +7,11 @@ import by.htp.dao.factory.DaoFactory;
 
 public class AuthorizationServiceImpl implements AuthorizationService {
 	private UserAuthorizationDao daoNme;
-	DaoFactory daoFactory =  new DaoFactory();
+//	DaoFactory daoFactory =  new DaoFactory();
 	
 
 	public AuthorizationServiceImpl() {
-		daoNme = daoFactory.getUserAuthorizationDao();
+		daoNme = DaoFactory.getInstance().getUserAuthorizationDao();
 		
 	}
 

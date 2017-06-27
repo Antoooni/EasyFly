@@ -6,9 +6,9 @@ import by.htp.bin.User;
 
 public interface CreateTicketDao {
 	public int ticket(Ticket ticket);
+	public int searchTicketList(User user);
+	public boolean ticketListExists(User user);
 	public int createTicketList(User user, int ticketId);
 	public void updateUser(int userId, TicketList ticketList);
-	public boolean ticketListExists(User user);
-	public int searchTicketList(User user);
 
 }

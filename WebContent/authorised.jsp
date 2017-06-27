@@ -46,35 +46,6 @@
     </header>
 
     <div class="main-and-sidebar-wrapper"> 
-    <!--<h2>All destinations</h2>
-        <form name="add_to_cart" action="Main" method="GET" id="cart">
-        <input type="hidden" name="action" value="add_to_cart">
-            <table border="1">
-                <tr>
-                    <th style="width: 36px;">#</th>
-                   
-                    <th style="width: 160px; height: 24px;">Destination</th>
-                </tr>
-                <c:forEach items="${list_directions}" var="i">
-                    <h3>
-                        <tr>
-                            <td><c:out value="${list_directions.indexOf(i)}" /></td>
-                            
-                            <td><c:out value="${i.getDirectionCity()}" /></td>
-                        </tr>
-                    </h3>
-                </c:forEach>
-            </table>
-            <select>
-                 <option selected disabled hidden></option>
-                 <c:forEach var="item" items="${list_directions}">
-                      <option>
-                            <c:out value="${item.getDirectionCity()}"/>
-                      </option>
-                 </c:forEach>
-            </select> -->
-
-
         <section class="main">
             <!--<h2>FLEW ONCE IMPRESSIONS FOREVER </h2>-->  
             
@@ -91,25 +62,28 @@
             <br>
             <br>
             <div class="search_frame">
-                <select class="from" on value="direction_from">from</option>
-                            <option selected disabled hidden>from...</option>
-                            <c:forEach var="item" items="${list_directions}">
-                                <option class="from">
+            <form name="go_search" action="Main" method="GET" id="go">
+                <input type="hidden" name="action" value="go_search">
+                    <select class="from" on value="direction_from" name="direction_from" required>from</option>
+                                <option selected disabled hidden>from...</option>
+                                <c:forEach var="item" items="${list_directions}">
+                                    <option class="from">
                                     <c:out value="${item.getDirectionCity()}"/>
-                                </option>
-                            </c:forEach>
-                </select>
-                 <select class="from" on value="direction_to">to</option>
-                            <option selected disabled hidden>to...</option>
-                            <c:forEach var="item" items="${list_directions}">
-                                <option class="from">
-                                    <c:out value="${item.getDirectionCity()}"/>
-                                </option>
-                            </c:forEach>
-                </select>
-                <input class="search_flight_date" type="date">
-                <input class="search_flight_date" type="date">
+                                    </option>
+                                </c:forEach>
+                    </select>
+                    <select class="from" on value="direction_to" name="direction_to" required>to</option>
+                                <option selected disabled hidden>to...</option>
+                                <c:forEach var="item" items="${list_directions}">
+                                    <option class="from">
+                                        <c:out value="${item.getDirectionCity()}"/>
+                                    </option>
+                                </c:forEach>
+                    </select>
+                <input class="search_flight_date" type="date" name="departure_date" id="departure_date">
+                <input class="search_flight_date" type="date" name="arrival_date" id="arrival_date">
                 <button class="go_search" id="go_search" >Go</button>
+            </form>
             </div>
             <br>
             <br>

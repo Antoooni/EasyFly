@@ -6,10 +6,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class CreatePassengerServiceImpl implements CreatePassengerService {
 	private CreatePassengerDao buyTicketDao;
-	DaoFactory daoFactory = new DaoFactory();
+//	DaoFactory daoFactory = new DaoFactory();
 	
 	public CreatePassengerServiceImpl(){
-		buyTicketDao= daoFactory.getCreatePassengerDao();
+		buyTicketDao= DaoFactory.getInstance().getCreatePassengerDao();
 	}
 
 	@Override

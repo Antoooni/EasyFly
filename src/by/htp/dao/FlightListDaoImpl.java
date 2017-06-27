@@ -70,16 +70,8 @@ public class FlightListDaoImpl implements FlightListDao {
 						String arrivalTime = rs.getString(8);
 						int flightId = rs.getInt(9);
 						String flightCode = rs.getString(10);
-						// int id = Integer.valueOf(rs.getString(1));
-						// String brand = rs.getString(2);
-						// double price =Double.valueOf(rs.getString(3));
-						// Category category=
-						// Category.valueOf(rs.getString(5).toUpperCase());
 						flightList.add(new Flight(fromDirectionCode, fromDirection, departureDate, departureTime, toDirection, arrivalDate, arrivalTime, flightId,flightCode) );
-//						System.out.println("Flight #: " + " From " + fromDirection.getDirectionCode() + ", "
-//								+ fromDirection.getCity() + " Departure " + departureDate + " at " + departureTime
-//								+ "-    TO " + toDirection.getDirectionCode() + ", " + toDirection.getCity()
-//								+ " Arriaval " + arrivalDate + " at " + arrivalTime);
+//						
 
 					}
 				}

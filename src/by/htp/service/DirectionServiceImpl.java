@@ -8,10 +8,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class DirectionServiceImpl implements DirectionService {
 	private FlightDirectionDao daoDirection;
-	DaoFactory daoFactory = new DaoFactory() ;
+//	DaoFactory daoFactory = new DaoFactory() ;
 	
 	public DirectionServiceImpl(){
-		daoDirection = daoFactory.getFlightDirectionDao();
+		daoDirection = DaoFactory.getInstance().getFlightDirectionDao();
 	}
 
 	@Override

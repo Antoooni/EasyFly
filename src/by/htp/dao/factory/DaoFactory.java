@@ -1,5 +1,7 @@
 package by.htp.dao.factory;
 
+import by.htp.dao.ChangeFlightDao;
+import by.htp.dao.ChangeFlightDaoImpl;
 import by.htp.dao.CreatePassengerDao;
 import by.htp.dao.CreatePassengerDaoImpl;
 import by.htp.dao.CreateTicketDao;
@@ -18,8 +20,18 @@ import by.htp.dao.UserCreateDao;
 import by.htp.dao.UserCreateDaoImpl;
 
 public class DaoFactory {
+	private final static UserAuthorizationDao userAuthorizationDao = new UserAuthorizationDaoImpl();
+	private final static FlightDirectionDao flightDirectionDao = new FlightDirectionDaoImpl();
+	private final static FlightListDao flightListDao = new FlightListDaoImpl();
+	private final static DirectionCodeDao directionCodeDao = new DirectionCodeDaoImpl();
+	private final static UserCreateDao userCreateDao = new UserCreateDaoImpl();
+	private final static SelectedFlightDao selectedFlightDao = new SelectedFlightDaoImpl();
+	private final static CreatePassengerDao createPassengerDao = new CreatePassengerDaoImpl();
+	private final static CreateTicketDao createTicketDao = new CreateTicketDaoImpl();
+	private final static ChangeFlightDao changeFlightDao = new ChangeFlightDaoImpl();
+	
 
-	public DaoFactory() {
+	private DaoFactory() {
 
 	}
 
@@ -32,28 +44,31 @@ public class DaoFactory {
 	}
 
 	public UserAuthorizationDao getUserAuthorizationDao() {
-		return new UserAuthorizationDaoImpl();
+		return userAuthorizationDao;
 	}
 	public FlightDirectionDao getFlightDirectionDao(){
-		return new FlightDirectionDaoImpl();
+		return flightDirectionDao;
 	}
 	public FlightListDao getFlightListDao(){
-		return new FlightListDaoImpl();
+		return flightListDao;
 	}
 	
 	public DirectionCodeDao getDirectionCodeDao(){
-		return new DirectionCodeDaoImpl();
+		return directionCodeDao;
 	}
 	public UserCreateDao getUserCreateDao(){
-		return new UserCreateDaoImpl();
+		return userCreateDao;
 	}
 	public SelectedFlightDao getSelectedFlightDao(){
-		return new SelectedFlightDaoImpl();
+		return selectedFlightDao;
 	}
 	public CreatePassengerDao getCreatePassengerDao(){
-		return new CreatePassengerDaoImpl();
+		return createPassengerDao;
 	}
 	public CreateTicketDao getCreateTicketDao(){
-		return new CreateTicketDaoImpl();
+		return createTicketDao;
+	}
+	public ChangeFlightDao getChangeFlightDao(){
+		return changeFlightDao;
 	}
 }

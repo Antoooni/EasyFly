@@ -8,10 +8,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class FlightListServiceImpl implements FlightListService {
 	private FlightListDao daoFlightList;
-	DaoFactory daoFactory = new DaoFactory();
+//	DaoFactory daoFactory = new DaoFactory();
 	
 	public FlightListServiceImpl(){
-		daoFlightList= daoFactory.getFlightListDao();
+		daoFlightList= DaoFactory.getInstance().getFlightListDao();
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import static by.htp.util.ConstantValue.*;
 /**
  * Servlet implementation class Main
  */
+@WebServlet("/controller")
 public class Main extends HttpServlet {
 	
 	
@@ -62,9 +64,9 @@ public class Main extends HttpServlet {
 		String page = null;
 		if (action != null) {
 			CommandAction currentAction = CommandChooser.chooseAction(action);
-			page = currentAction.execute(request, response);
-			RequestDispatcher disp = request.getRequestDispatcher(page);
-			disp.forward(request, response);
+			currentAction.execute(request, response);
+//			RequestDispatcher disp = request.getRequestDispatcher(page); перенести в соответствующие имплементации
+//			disp.forward(request, response);
 		}
 
 	}
@@ -74,10 +76,11 @@ public class Main extends HttpServlet {
 		String page = null;
 		if (action != null) {
 			CommandAction currentAction = CommandChooser.chooseAction(action);
-			page = currentAction.execute(request, response);
-			page = trimSlashPageName(page);
+			/*page = */currentAction.execute(request, response);
+//			page = trimSlashPageName(page);
+			page="index.jsp";
 			try {
-				response.sendRedirect(page);
+				response.sendRedirect("Main?action=go_home");
 				System.out.println("POST ");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -87,7 +90,7 @@ public class Main extends HttpServlet {
 		}
 	}
 
-	public String trimSlashPageName(String page) {
+	private String trimSlashPageName(String page) {
 		if (page.charAt(0) == '/') {
 			page = page.substring(1, page.length());
 			return page;

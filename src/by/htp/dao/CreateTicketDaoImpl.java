@@ -65,24 +65,31 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 	public int createTicketList(User user, int ticketId) {
 		PreparedStatement ps;
 		int key = 0;
+		int maxTicketListId = 0;
 		try {
 			try {
 				SQLConnectionPool sqlConnection = new SQLConnectionPool();
 				connection = sqlConnection.getConnection();
 				if (!connection.isClosed()) {
+					//multiply primary key, find max index
+					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_MAX_LIST);
+					ResultSet rs = ps.executeQuery();
+					if(rs.next()){
+						maxTicketListId += rs.getInt(1);
+					}
+					//insert into table
 					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_LIST, Statement.RETURN_GENERATED_KEYS);
-					ps.setInt(1, ticketId);
-					ps.setInt(2, user.getUserId());
+					ps.setInt(1, maxTicketListId);
+					ps.setInt(2, ticketId);
+					ps.setInt(3, user.getUserId());
 					ps.executeUpdate();
 
-					ResultSet rs = ps.getGeneratedKeys();
+					rs = ps.getGeneratedKeys();
 					if (rs.next()) {
 						// Retrieve the auto generated key(s).
 						key = rs.getInt(1);
 						System.out.println("id in sql " + key);
 					}
-
-					// ps.executeUpdate();
 				}
 
 			} catch (NamingException e) {
@@ -108,8 +115,7 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 				SQLConnectionPool sqlConnection = new SQLConnectionPool();
 				connection = sqlConnection.getConnection();
 				if (!connection.isClosed()) {
-					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_UPDATE_USER,
-							Statement.RETURN_GENERATED_KEYS);
+					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_UPDATE_USER, Statement.RETURN_GENERATED_KEYS);
 					ps.setInt(1, ticketList.getTicketListId());
 					ps.setInt(2, userId);
 					ps.executeUpdate();
@@ -131,7 +137,7 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 	@Override
 	public boolean ticketListExists(User user) {
 		PreparedStatement ps;
-		int flightListNumber = 0;
+		int flightListQuantity = 0;
 		try {
 			try {
 				SQLConnectionPool sqlConnection = new SQLConnectionPool();
@@ -139,9 +145,12 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 				if (!connection.isClosed()) {
 					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_IF_TICKETLIST_EXISTS);
 					ps.setInt(1, user.getUserId());
-					ps.executeUpdate();
+					//ps.executeUpdate();
 					ResultSet rs = ps.executeQuery();
-					flightListNumber =rs.getInt(rs.getString(1));
+					if (rs.next()) {
+						flightListQuantity =rs.getInt(rs.getInt(1));
+					}
+					
 				}
 
 			} catch (NamingException e) {
@@ -155,7 +164,7 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (flightListNumber==0)
+		if (flightListQuantity==0)
 			return false;
 		else
 			return true;
@@ -173,9 +182,16 @@ public class CreateTicketDaoImpl implements CreateTicketDao {
 				if (!connection.isClosed()) {
 					ps = connection.prepareStatement(SQL_STATEMENT_CREATE_TICKET_SEARCH_TICKET_LIST);
 					ps.setInt(1, user.getUserId());
-					ps.executeUpdate();
-					ResultSet rs = ps.executeQuery();
-					ticketListId =rs.getInt(rs.getInt(1));
+					//ps.executeUpdate();
+					ResultSet rs= ps.executeQuery();
+					//ticketListId =rs.getInt(rs.getInt(1));
+					//---------
+					if (rs.next()) {
+						ticketListId = rs.getInt(1);
+						System.out.println("id in sql " + ticketListId);
+					}
+					//---------
+					
 				}
 
 			} catch (NamingException e) {

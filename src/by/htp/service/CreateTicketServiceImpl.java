@@ -8,10 +8,10 @@ import by.htp.dao.factory.DaoFactory;
 
 public class CreateTicketServiceImpl implements CreateTicketService {
 	private CreateTicketDao createTicketDao;
-	DaoFactory daoFactory = new DaoFactory();
+//	DaoFactory daoFactory = new DaoFactory();
 	
 	public CreateTicketServiceImpl(){
-		createTicketDao=daoFactory.getCreateTicketDao();
+		createTicketDao=DaoFactory.getInstance().getCreateTicketDao();
 	}
 
 	@Override

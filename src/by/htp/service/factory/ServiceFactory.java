@@ -2,6 +2,8 @@ package by.htp.service.factory;
 
 import by.htp.service.AuthorizationService;
 import by.htp.service.AuthorizationServiceImpl;
+import by.htp.service.ChangeFlightService;
+import by.htp.service.ChangeFlightServiceImpl;
 import by.htp.service.CreatePassengerService;
 import by.htp.service.CreatePassengerServiceImpl;
 import by.htp.service.CreateTicketService;
@@ -19,10 +21,17 @@ import by.htp.service.UserCreateServiceImpl;
 
 public class ServiceFactory {
 
-	private AuthorizationService authorizationService;
-	private DirectionService directionService;
+	private static final AuthorizationService authorizationService=new AuthorizationServiceImpl();
+	private static final DirectionService directionService= new DirectionServiceImpl();
+	private static final DirectionCodeService directionCodeService = new DirectionCodeServiceImpl();
+	private static final UserCreateService userCreateService = new UserCreateServiceImpl();
+	private static final FlightListService flightListService = new FlightListServiceImpl();
+	private static final SelectedFlightService selectedFlightService = new SelectedFlightServiceImpl();
+	private static final CreatePassengerService createPassengerService = new CreatePassengerServiceImpl();
+	private static final CreateTicketService createTicketService = new CreateTicketServiceImpl();
+	private static final ChangeFlightService changeFlightService = new ChangeFlightServiceImpl();
 
-	public ServiceFactory() {
+	private ServiceFactory() { 
 
 	}
 
@@ -35,32 +44,35 @@ public class ServiceFactory {
 	}
 
 	public DirectionService getDirectionService() {
-		return new DirectionServiceImpl();
+		return directionService;
 	}
 
 	public AuthorizationService getAuthorizationService() {
-		return new AuthorizationServiceImpl();
+		return authorizationService;
 	}
 
 	public DirectionCodeService getDirectionCodeService() {
-		return new DirectionCodeServiceImpl();
+		return directionCodeService;
 	}
 
 	public UserCreateService getUserCreateService() {
-		return new UserCreateServiceImpl();
+		return userCreateService;
 	}
 
 	public FlightListService getFlightListService() {
-		return new FlightListServiceImpl();
+		return flightListService;
 	}
 
 	public SelectedFlightService getSelectedFlightService() {
-		return new SelectedFlightServiceImpl();
+		return selectedFlightService;
 	}
 	public CreatePassengerService getCreatePassengerService(){
-		return new CreatePassengerServiceImpl();
+		return createPassengerService;
 	}
 	public CreateTicketService getCreateTicketService(){
-		return new CreateTicketServiceImpl();
+		return createTicketService;
+	}
+	public ChangeFlightService getChangeFlightService(){
+		return changeFlightService;
 	}
 }
