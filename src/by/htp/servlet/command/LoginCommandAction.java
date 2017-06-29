@@ -2,11 +2,9 @@ package by.htp.servlet.command;
 
 import static by.htp.util.ConstantValue.*;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,8 +15,13 @@ import by.htp.service.AuthorizationService;
 import by.htp.service.DirectionService;
 import by.htp.service.factory.ServiceFactory;
 import by.htp.servlet.ForwardPage;
+import by.htp.util.LogConfig;
 
 public class LoginCommandAction implements CommandAction {
+	private static String LOG_PROPERTIES_FILE= "C:/Users/ayumazec/workspace_IT_Academy -NEW/EasyFlyWebProject/resources/log4j.xml";
+	LogConfig config = new LogConfig(LOG_PROPERTIES_FILE);
+	
+	private static final Logger log = Logger.getLogger(LoginCommandAction.class.getName());
 
 	private AuthorizationService authorizationService;
 	private DirectionService directionService;
@@ -46,6 +49,9 @@ public class LoginCommandAction implements CommandAction {
 
 			session.setAttribute(REQUEST_PARAM_SESSION_USERNAME, user.getUserName());
 			session.setAttribute(REQUEST_PARAM_SESSION_USER, user);
+			config.init();
+			log.info("User "+user.getUserName() + " successfully logged in");
+			log.fine("!!!!!!!!!");
 			page = PAGE_HOME;
 		} else {
 			page = PAGE_ERROR;
