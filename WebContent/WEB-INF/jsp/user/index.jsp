@@ -6,9 +6,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Index</title>
+	<title><fmt:message key="title.index" /></title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
 </head>
 <body>

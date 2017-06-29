@@ -5,7 +5,7 @@
 <head lang=${language}>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flights</title>
+    <title><fmt:message key="title.flightList" /></title>
     <link rel="stylesheet" type="text/css" href="css/flight_list.css"> 
 	<script type="text/javascript" src="js/script.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
@@ -21,53 +21,23 @@
 
     <div class="main-and-sidebar-wrapper"> 
         <section class="main">
-            <h2>AVAILABLE FLIGHTS </h2>
-          <!-- <form name="add_to_cart" action="Main" method="GET" id="cart">
-            <input type="hidden" name="action" value="add_to_cart">-->
-              <!--<table class="table" border="1" >
-                <tr class="table_field">
-                  <th class="table_field" style="width: 36px; ">#</th>
-                  <th style="width: 100px; height: 24px; ">selection</th>
-                  <th style="width: 100px; height: 24px; ">From airport code</th>
-                  <th style="width: 100px; height: 24px; ">From city</th>
-                  <th style="width: 100px; height: 24px; ">Departure date</th>
-                  <th style="width: 100px; height: 24px; ">Departure time</th>
-                  <th style="width: 100px; height: 24px; ">To airport code</th>
-                  <th style="width: 100px; height: 24px; ">To city</th>
-                  <th style="width: 100px; height: 24px; "> Arrival date</th>
-                  <th style="width: 100px; height: 24px; "> Arrival time</th>
-                </tr>
-                  <c:forEach items="${list_flights}" var="i">
-                    <h3>
-                     <tr> 
-                       <td><c:out value="${list_flights.indexOf(i)}"/></td>
-                       <td style="text-align: center; vertical-align: middle;"><input type="submit" name="add_cart" value="buy" /></td>
-                       <td><c:out value="${i.getFromDirection().getDirectionCode()}" /></td>
-                       <td><c:out value="${i.getFromDirection().getCity()}" /></td>
-                       <td><c:out value="${i.getDepartureDate()}" /> </td>
-                       <td><c:out value="${i.getDepartureTime()}" /></td>
-                       <td><c:out value="${i.getToDirection().getDirectionCode()}" /> </td>
-                       <td><c:out value="${i.getToDirection().getCity()}" /></td>
-                       <td><c:out value="${i.getArrivalDate()}" /> </td>
-                       <td><c:out value="${i.getArrivalTime()}" /></td>
-                     </tr>
-                    </h3>
-                  </c:forEach>
-                </table>-->
+            <h2 style="text-transform: uppercase;">
+            	<fmt:message key="title.flightList" />
+            </h2>
                <div class="datagrid">
                  <table>
                  <thead>
                     <tr>
                       <th>#</th>
-                      <th>selection</th>
-                      <th>From airport code</th>
-                      <th>From city</th>
-                      <th>Departure date</th>
-                      <th>Departure time</th>
-                      <th>To airport code</th>
-                      <th>To city</th>
-                      <th>Arrival date</th>
-                      <th>Arrival time</th>
+                      <th><fmt:message key="flight.selection" /></th>
+                      <th><fmt:message key="flight.airpotCode" /></th>
+                      <th><fmt:message key="flight.fromCity" /></th>
+                      <th><fmt:message key="flight.departureDate" /></th>
+                      <th><fmt:message key="flight.departureTime" /></th>
+                      <th><fmt:message key="flight.airpotCode" /></th>
+                      <th><fmt:message key="flight.toCity" /></th>
+                      <th><fmt:message key="flight.arrivalDate" /></th>
+                      <th><fmt:message key="flight.arrivalTime" /></th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -85,7 +55,7 @@
                             <div>
                               <form name="buy" action="Main" method="GET" id="buy">
                                   <input type="hidden" name="action" value="buy">
-                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id">Buy it</button>
+                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id"><fmt:message key="button.buyIt" /></button>
                               </form>
                             </div>
                            </td>
@@ -106,7 +76,7 @@
             <!--</form>-->
             <c:if test="${logged_user == false}">
               <div class="nonlogged">
-                <div class="alertloggin">You are not logged-in yet. Please LOG IN
+                <div class="alertloggin"><fmt:message key="alert.login" />
                   <!--<c:out value="You are not logged-in yet. Please LOG IN" />-->
                 </div>
               </div>

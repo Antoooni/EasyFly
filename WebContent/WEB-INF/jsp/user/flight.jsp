@@ -4,7 +4,7 @@
 <head lang=${language}>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flights</title>
+    <title><fmt:message key="title.flight" /></title>
     <link rel="stylesheet" type="text/css" href="css/flight.css"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 </head>
@@ -16,7 +16,7 @@
     <header>
         <nav>
         <%@include file="/WEB-INF/include/header.jspf"%>
-            <li><a href="#"><h1>Home</h1></a></li>
+            <li><a href="#"><h1><fmt:message key="button.home" /></h1></a></li>
         </nav>
         <div id="myPopUp" class="modal">
         </div>  
@@ -24,7 +24,7 @@
 
     <div class="main-and-sidebar-wrapper"> 
         <section class="main">
-            <h2>Your flight </h2>
+            <h2><fmt:message key="purchase.header" /> </h2>
             <form name="buy_ticket" action="Main" method="POST">
               <input type="hidden" value="buy_ticket" name="action" />
                <!--Flight info-->
@@ -34,12 +34,12 @@
               <!--Spoiler-->
               <details id="details_first">
                 <summary class="spoiler">
-                <div id="spoiler_head">Passenger info</div>
+                <div id="spoiler_head"><fmt:message key="purchase.passInfo" /></div>
                 </summary>
                 <!--Name-->
                 <div id="first">
                   <div id="first_left">
-                    Pass name
+                    <fmt:message key="purchase.passName" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_name" type="text" name="passenger_name"  required>
@@ -48,7 +48,7 @@
                 <!--Surname-->
                 <div id="first">
                   <div id="first_left">
-                    Pass Surname
+                    <fmt:message key="purchase.passSurname" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_name" type="text" name="passenger_surname"  required>
@@ -57,7 +57,7 @@
                 <!--MiddleName-->
                 <div id="first">
                   <div id="first_left">
-                    Pass Middlename
+                    <fmt:message key="purchase.passMiddleName" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_name" type="text" name="passenger_midname" >
@@ -66,7 +66,7 @@
                 <!--Age-->
                 <div id="first">
                   <div id="first_left">
-                    Age
+                    <fmt:message key="purchase.age" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_age" type="number" size="3" min="1" max="100" value="1" name="passenger_age" pattern="[0-9]{2}">
@@ -75,7 +75,7 @@
                 <!--Date of birth-->
                 <div id="first">
                   <div id="first_left">
-                    Date of birth
+                    <fmt:message key="purchase.birth" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_date" type="date" name="passenger_birth" required>
@@ -84,19 +84,19 @@
                 <!--gender-->
                 <div id="first">
                   <div id="first_left">
-                    Sex
+                    <fmt:message key="purchase.sex" />
                   </div>
                   <div id="first_right">
                       <select id="passenger_sex" name="passenger_sex">
-                        <option>Male</option>
-                        <option>Female</option>
+                        <option><fmt:message key="purchase.sexMale" /></option>
+                        <option><fmt:message key="purchase.sexFemale" /></option>
                       </select>
                   </div>
                 </div>
                 <!--passport id-->
                 <div id="first">
                   <div id="first_left">
-                    Passport number
+                    <fmt:message key="purchase.passport" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_name" type="text" name="passenger_passport_number" required>
@@ -105,7 +105,7 @@
                 <!--passport expiry-->
                 <div id="first">
                   <div id="first_left">
-                    Passport expirty
+                    <fmt:message key="purchase.passportExpiry" />
                   </div>
                   <div id="first_right">
                       <input id="passenger_date" type="date" name="passenger_passport_expirty" required>
@@ -113,46 +113,46 @@
                 </div>
                 <div id="first">
                   <div id="first_left">
-                    Primary boarding
+                    <fmt:message key="purchase.boarding" />
                   </div>
                   <div id="first_right">
                       <select id="passenger_sex" name="passenger_boarding">
-                        <option>No</option>
-                        <option>Yes</option>
+                        <option><fmt:message key="purchase.Yes" /></option>
+                        <option><fmt:message key="purchase.No" /></option>
                       </select>
                   </div>
                 </div>
                 <div id="first">
                   <div id="first_left">
-                    Online check-in
+                    <fmt:message key="purchase.checkIn" />
                   </div>
                   <div id="first_right">
                       <select id="passenger_sex" name="passenger_checkin">
-                        <option>No</option>
-                        <option>Yes</option>
+                        <option><fmt:message key="purchase.No" /></option>
+                        <option><fmt:message key="purchase.Yes" /></option>
                       </select>
                   </div>
                 </div>
                 <details id="details_last">
                   <summary class="spoiler">
-                  	<div id="spoiler_head">Baggage info</div>
+                  	<div id="spoiler_head"><fmt:message key="purchase.baggageInfo" /></div>
                   </summary>
                   <div id="baggage_img"><IMG src="img/baggage_bg.jpg" HEIGHT="200" WIDTH="600"></div>
                   <div id="first">
                     <div id="first_left_baggage">
-                      Baggage
+                      <fmt:message key="purchase.baggage" />
                     </div>
                     <div id="first_right">
                         <select id="passenger_sex" name="passenger_baggage">
-                         <option value="small">Small 15 kilo</option>
-                         <option value="medium">Medium 22 kilo</option>
-                         <option value="large">Large 32 kilo</option>
+                         <option value="small"><fmt:message key="purchase.baggageS" /></option>
+                         <option value="medium"><fmt:message key="purchase.baggageM" /></option>
+                         <option value="large"><fmt:message key="purchase.baggageL" /></option>
                       </select>
                     </div>
                   </div>
                   <div id="buy_it">
                     <div id="buy_it_button">
-                      <button class="go_search" id="go_search" >Buy it!</button>
+                      <button class="go_search" id="go_search" ><fmt:message key="button.buy" /></button>
                     </div>
                   </div>
 

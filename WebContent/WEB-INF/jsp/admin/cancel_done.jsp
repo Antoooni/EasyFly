@@ -4,7 +4,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flight is cancelled</title>
+    <title><fmt:message key="title.cancelDone" /></title>
     <link rel="stylesheet" type="text/css" href="css/done.css"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 </head>
@@ -32,9 +32,9 @@
 
     <div class="main-and-sidebar-wrapper"> 
         <section class="main">
-            <h2>Changes applied! </h2>
+            <h2><fmt:message key="cancel.apply" /></h2>
               <div class="text_passenger_color">
-              	<h3>Flight is cancelled</h3>
+              	<h3><fmt:message key="cancel.cancel" /></h3>
               </div>
           <div class= "baggage_img">
           	<img src="img/flight_cancelled.jpg" width="50%" >

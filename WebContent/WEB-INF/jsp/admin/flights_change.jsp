@@ -4,7 +4,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flights</title>
+    <title><fmt:message key="title.change" /></title>
     <link rel="stylesheet" type="text/css" href="css/flight_list.css"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
     <script type="text/javascript" src="js/script.js"></script>
@@ -18,22 +18,22 @@
 
     <div class="main-and-sidebar-wrapper"> 
         <section class="main">
-            <h2>FLIGHTS </h2>
+            <h2 style="text-transform: uppercase;"><fmt:message key="title.change" /> </h2>
                <div class="datagrid">
                  <table>
                  <thead>
                     <tr>
                       <th>#</th>
-                      <th>selection</th>
-                      <th>Code</th>
-                      <th>From city</th>
-                      <th>Departure date</th>
-                      <th>Departure time</th>
-                      <th>Code</th>
-                      <th>To city</th>
-                      <th>Arrival date</th>
-                      <th>Arrival time</th>
-                      <th>Cancel</th>
+                      <th><fmt:message key="flight.selection" /></th>
+                      <th><fmt:message key="flight.airpotCode" /></th>
+                      <th><fmt:message key="flight.fromCity" /></th>
+                      <th><fmt:message key="flight.departureDate" /></th>
+                      <th><fmt:message key="flight.departureDate" /></th>
+                      <th><fmt:message key="flight.airpotCode" /></th>
+                      <th><fmt:message key="flight.toCity" /></th>
+                      <th><fmt:message key="flight.arrivalDate" /></th>
+                      <th><fmt:message key="flight.arrivalTime" /></th>
+                      <th><fmt:message key="change.isCancel" /></th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -51,7 +51,7 @@
                             <div>
                               <form name="change_flight" action="Main" method="GET" id="change_flight">
                                   <input type="hidden" name="action" value="change_flight">
-                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id">Select it</button>
+                                  <button class="button_buy" id="myBtnbuy" value="${i.getFlightId()}" name="flight_id"><fmt:message key="change.select" /></button>
                               </form>
                             </div>
                            </td>

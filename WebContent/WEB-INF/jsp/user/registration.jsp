@@ -4,7 +4,7 @@
 <head lang=${language}>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Registration</title>
+	<title><fmt:message key="title.registration" /></title>
 	
 	<link rel="stylesheet" type="text/css" href="css/registration.css" />
 	<style>
@@ -31,14 +31,14 @@
 				method="GET" action="Main" id="create_user">
 				<input type="hidden" name="action" value="create_user">
 				<div class="title">
-					<h2>Registration</h2>
+					<h2><fmt:message key="registration.registration" /></h2>
 				</div>
 				<div class="element-input">
 					<label class="title"> <span class="required">*</span>
 					</label>
 					<div class="item-cont">
 						<input class="large" type="text" name="create_login"
-							required="required" placeholder="Login" />
+							required="required" placeholder="<fmt:message key="registration.login" />" />
 						<!--<span class="icon-place"></span>-->
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 					</label>
 					<div class="item-cont">
 						<input class="large" type="password" name="create_password"
-							value="" required="required" placeholder="Password" />
+							value="" required="required" placeholder="<fmt:message key="registration.password" />" />
 						<!--<span class="icon-place"></span>-->
 					</div>
 				</div>
@@ -55,16 +55,16 @@
 					<label class="title"></label>
 					<div class="item-cont">
 						<input class="large" type="password" name="create_password1"
-							value="" placeholder="Password confirm" />
+							value="" placeholder="<fmt:message key="registration.passwordConfirm" />" />
 						<!-- <span class="icon-place"></span>-->
 					</div>
 				</div>
 				<div class="element-name">
 					<!--<label class="title"></label>-->
-					<span class="nameFirst"> <input placeholder="Name First"
+					<span class="nameFirst"> <input placeholder="<fmt:message key="registration.name" />"
 						type="text" size="8" name="name[first]" /> <span
 						class="icon-place"></span>
-					</span> <span class="nameLast"> <input placeholder="Name Last"
+					</span> <span class="nameLast"> <input placeholder="<fmt:message key="registration.surname" />"
 						type="text" size="14" name="name[last]" /> <span
 						class="icon-place"></span>
 					</span>
@@ -74,12 +74,12 @@
 					</label>
 					<div class="item-cont">
 						<input class="large" type="email" name="create_email" value=""
-							required="required" placeholder="Email" />
+							required="required" placeholder="<fmt:message key="registration.email" />" />
 						<!--<span class="icon-place"></span>-->
 					</div>
 				</div>
 				<div class="submit">
-					<input type="submit" value="Register" />
+					<input type="submit" value="<fmt:message key="registration.register" />" />
 				</div>
 			</form>
 		</div>

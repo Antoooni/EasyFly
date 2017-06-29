@@ -1,6 +1,6 @@
 <div id="content">
 	<div class="position_head">
-		<div class="position_head_inside">Детали перелета</div>
+		<div class="position_head_inside"><fmt:message key="flight.details" /></div>
 	</div>
 	<div class="position_first">
 
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div id="blok2_first">
-			Полет предоставлен авиакоппанией<br> EasyFly
+			<fmt:message key="flightInfo.provided" /><br> EasyFly
 		</div>
 	</div>
 	<div class="position_third">
@@ -60,17 +60,17 @@
 	</div>
 	<div id="blok4_fourth">
 		<div id="blok1_four">
-			Выполняет
+			<fmt:message key="flightInfo.operated" />
 			<div id="sub__four_block1">EasyFly</div>
 		</div>
 		<div id="blok2_four">
-			Рейс
+			<fmt:message key="flightInfo.flight" />
 			<div id="sub__four_block2">
 				<c:out value="${flight.getFlightCode()}" />
 			</div>
 		</div>
 		<div id="blok3_four">
-			Самолет
+			<fmt:message key="flightInfo.plane" />
 			<div id="sub__four_block1">
 				<c:out value="${flight.getPlane().getPlaneName()}" />
 			</div>
@@ -79,19 +79,19 @@
 </div>
 <div class="position">
 	<div id="blok1_five">
-		Время в пути
-		<div id="sub__five_block1">1 час 25 мин</div>
+		<fmt:message key="flightInfo.duration" />
+		<div id="sub__five_block1">1 час 25 мин!!!</div>
 	</div>
 	<div id="blok2_five">
-		Класс
-		<div id="sub__five_block1">Economy(c)</div>
+		<fmt:message key="flightInfo.class" />
+		<div id="sub__five_block1"><fmt:message key="flightInfo.className" /></div>
 	</div>
 	<div id="blok3_five">
-		Питание
-		<div id="sub__five_block1">Включено</div>
+		<fmt:message key="flightInfo.meals" />
+		<div id="sub__five_block1"><fmt:message key="flightInfo.mealsValue" /></div>
 	</div>
 	<div id="blok4_five">
-		Багаж
-		<div id="sub__five_block1">Не выбрано</div>
+		<fmt:message key="flightInfo.baggage" />
+		<div id="sub__five_block1"><fmt:message key="flightInfo.baggageValue" /></div>
 	</div>
 </div>
